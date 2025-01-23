@@ -12,7 +12,7 @@ import {
   ArrowRight 
 } from 'lucide-react';
 
-const Footer = () => {
+export const Footer = () => {
   const quickLinks = [
     { label: 'Home', to: '/' },
     { label: 'Services', to: '/services' },
@@ -141,5 +141,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

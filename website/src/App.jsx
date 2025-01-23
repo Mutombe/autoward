@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/nav/nav';
-import Footer from './components/footer/Footer';
+import { Footer } from './components/footer/footer';
 import Homepage from './components/home/Home';
 import { ServicesPage, AboutPage, ContactPage } from './components/services/services';
 
