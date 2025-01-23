@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  {/* Background */}
+  <rect width="100" height="100" rx="15" fill="#2563EB" />
+  
+  {/* Stylized Car/Electronics Combination */}
+  <path 
+    d="M25 60 L40 45 L60 45 L75 60" 
+    fill="none" 
+    stroke="white" 
+    strokeWidth="6" 
+    strokeLinecap="round"
+  />
+  
+  {/* Circuit Board Inspired Lines */}
+  <line x1="20" y1="70" x2="80" y2="70" stroke="white" strokeWidth="3" strokeDasharray="5,5" />
+  
+  {/* Chip/Circuit Element */}
+  <rect 
+    x="45" 
+    y="30" 
+    width="10" 
+    height="10" 
+    fill="white" 
+    rx="2"
+  />
+  
+  {/* Wheels/Connection Points */}
+  <circle cx="35" cy="70" r="5" fill="#FFFFFF" />
+  <circle cx="65" cy="70" r="5" fill="#FFFFFF" />
+</svg>
