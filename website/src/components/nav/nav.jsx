@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, Settings, User, BookOpen, Menu, X } from 'lucide-react';
 
-const Navigation = () => {
+export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -71,4 +71,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+

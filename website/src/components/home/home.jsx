@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Settings, Cog, Wrench, Activity, Users, Award, Clock, Phone, Mail, MapPin, Cpu, Battery, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-const Homepage = () => {
+export const Homepage = () => {
   const carouselImages = [
     '/cbr.jpg',
     '/cbr2.jpg',
@@ -116,4 +116,3 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;

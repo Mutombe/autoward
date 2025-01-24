@@ -1,9 +1,9 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navigation from './components/nav/nav';
+import { Navigation } from './components/nav/nav';
 import { Footer } from './components/footer/footer';
-import Homepage from './components/home/Home';
+import { Homepage } from './components/home/home';
 import { ServicesPage, AboutPage, ContactPage } from './components/services/services';
 
 const App = () => {
