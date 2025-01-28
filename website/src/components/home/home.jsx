@@ -1,5 +1,102 @@
 import React, { useState, useEffect } from 'react';
 import { Settings, Wrench, Activity, Cpu, Battery, Zap } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+
+const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const images = [
+    '/key1.png',
+    '/key2.webp',
+    '/cbr2.jpg'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const slideVariants = {
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
+  return (
+    <div className="relative h-[600px] overflow-hidden">
+      {/* Background Image Carousel */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0"
+        >
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${images[currentSlide]})` }}
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Overlay Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-900/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent" />
+
+      {/* Geometric Pattern Overlay */}
+      <div className="absolute inset-0 bg-[url('/cbr.jpg')] opacity-10" />
+
+      {/* Content */}
+      <div className="relative h-full container mx-auto px-4">
+        <div className="h-full flex flex-col justify-center max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Advanced Automotive Electronics Solutions
+            </h1>
+            <p className="text-xl text-blue-100 mb-8">
+              Specialized in Key Programming, Computer Box Repair, and Electronic Systems
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button className="group bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all flex items-center space-x-2" onClick={() => window.location.href = '/services'}>
+                <span>Explore Services</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="bg-white hover:bg-gray-100 text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors" onClick={() => window.location.href = '/contact'}>
+                Contact Us
+              </button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-4 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                index === currentSlide 
+                  ? 'bg-red-600 w-8' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const Homepage = () => {
   const services = [
@@ -33,6 +130,7 @@ export const Homepage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
+      <HeroSection />
       <div className="relative h-[500px] bg-gradient-to-r from-blue-900 to-blue-800 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] opacity-20 bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/50"></div>
@@ -47,10 +145,10 @@ export const Homepage = () => {
               Key Programming | Computer Box Repair | Electronic Systems
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md font-semibold transition-colors" onClick={() => window.location.href = '/services'}>
                 Our Services
               </button>
-              <button className="bg-white hover:bg-gray-100 text-blue-900 px-8 py-3 rounded-md font-semibold transition-colors">
+              <button className="bg-white hover:bg-gray-100 text-blue-900 px-8 py-3 rounded-md font-semibold transition-colors" onClick={() => window.location.href = '/contact'}>
                 Contact Us
               </button>
             </div>
