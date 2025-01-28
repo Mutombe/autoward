@@ -67,7 +67,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-8">
           {/* Company Info */}
           <div>
-            <h4 className="text-xl font-bold mb-4">Autoward Electronics</h4>
+            <h4 className="text-xl font-bold mb-4">Howard Electronics</h4>
             {contactInfo.map((item, index) => (
               <motion.div
                 key={index}

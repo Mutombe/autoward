@@ -137,7 +137,7 @@ export const Homepage = () => {
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Autoward Electronics
+              Howard Electronics
             </h1>
             <p className="text-xl text-blue-100 mb-8">
               Specialists in Automotive Electronics
