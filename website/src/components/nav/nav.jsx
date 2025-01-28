@@ -28,7 +28,7 @@ export const Navigation = () => {
               </div>
             </div>
             <span className="ml-3 text-xl font-bold text-white">
-              Autoward Electronics
+              Howard Electronics
             </span>
           </div>
         </Link>
