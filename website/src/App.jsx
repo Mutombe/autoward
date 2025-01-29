@@ -1,10 +1,21 @@
 // App.jsx
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useState, useEffect } from "react";
 import { Navigation } from './components/nav/nav';
 import { Footer } from './components/footer/footer';
 import { Homepage } from './components/home/home';
 import { ServicesPage, AboutPage, ContactPage } from './components/services/services';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   return (
