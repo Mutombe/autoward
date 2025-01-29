@@ -21,6 +21,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
+        <ScrollToTop />
         <Navigation />
         <main className="flex-1">
           <Routes>
